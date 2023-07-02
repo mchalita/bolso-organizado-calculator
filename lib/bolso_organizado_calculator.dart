@@ -1,24 +1,23 @@
 library bolso_organizado_calculator;
 
-import 'package:bolso_organizado_calculator/models/transaction_model.dart';
+
 
 class Calculator {
 
-  dynamic calcular(List<Object> listObject) {
-    List<TransactionModel> listTransactionModel = listObject as List<TransactionModel>;
+  dynamic calcular(List<double> listValue) {
 
     double totalIncome = 0;
     double totalOutcome = 0;
     double totalBalance = 0;
 
-    for(var transactionModel in listTransactionModel){
-      if(transactionModel.value > 0){
-        totalIncome += transactionModel.value;
+    for(var value in listValue){
+      if(value > 0){
+        totalIncome += value;
       }else{
-        totalOutcome += transactionModel.value;
+        totalOutcome += value;
       }
 
-      totalBalance += transactionModel.value;
+      totalBalance += value;
     }
 
     return {totalIncome, totalOutcome, totalBalance};
