@@ -4,7 +4,9 @@ import 'package:bolso_organizado_calculator/models/transaction_model.dart';
 
 class Calculator {
 
-  dynamic calcular(List<TransactionModel> listTransactionModel) {
+  dynamic calcular(List<Object> listObject) {
+    List<TransactionModel> listTransactionModel = listObject as List<TransactionModel>;
+
     double totalIncome = 0;
     double totalOutcome = 0;
     double totalBalance = 0;
